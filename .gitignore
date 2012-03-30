@@ -1,0 +1,6 @@
+cache/
+log/
+config/databases.yml
+lib/vendor/
+/nbproject/private/cache/
+/nbproject/private/
