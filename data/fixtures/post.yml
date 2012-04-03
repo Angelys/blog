@@ -1,0 +1,6 @@
+Post:  
+<?php for($i = 1; $i <= 10 ; $i++): ?>
+  post_<?php echo $i ;?>:  
+    title: post_<?php echo $i; ?>_title
+    post:  This is some <?php echo $i ; ?> post.
+<?php endfor; ?>

@@ -4,8 +4,17 @@
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
-
+  param: { module: post, action: index }
+  
+show_post:
+  url: /post/:id/:title
+  class: sfDoctrineRoute
+  options: {model: Post, type: object }
+  param: { module: post , action: show }
+  requirements:
+    id: \d+
+    sf_method: [get]
+    
 # generic rules
 # please, remove them by adding more specific rules
 default_index:
