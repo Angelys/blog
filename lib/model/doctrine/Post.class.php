@@ -12,4 +12,8 @@
  */
 class Post extends BasePost
 {
+    public function getTitleSlug()
+    {
+        return Blog::slugify($this->getTitle());
+    }
 }

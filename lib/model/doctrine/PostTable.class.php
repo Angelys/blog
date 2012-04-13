@@ -16,4 +16,14 @@ class PostTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Post');
     }
+    
+    public function getActivePosts($max)
+    {
+        $q=Doctrine_Query::create()
+          ->from('Post p')
+          ->limit($max);      
+                  
+        return $q->execute();
+    }
+    
 }

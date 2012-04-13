@@ -2,12 +2,16 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
+post:
+  class: sfDoctrineRouteCollection
+  options: {model: Post}
+
 homepage:
   url:   /
-  param: { module: post, action: index }
+  param: { module: post, action: index }  
   
 show_post:
-  url: /post/:id/:title
+  url: /post/:id/:title_slug
   class: sfDoctrineRoute
   options: {model: Post, type: object }
   param: { module: post , action: show }
@@ -15,11 +19,12 @@ show_post:
     id: \d+
     sf_method: [get]
     
+  
 # generic rules
 # please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
-
-default:
-  url:   /:module/:action/*
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+#  
+#default:
+#  url:   /:module/:action/*

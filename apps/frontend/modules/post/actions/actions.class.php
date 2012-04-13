@@ -12,15 +12,12 @@ class postActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->posts = Doctrine_Core::getTable('Post')
-      ->createQuery('a')
-      ->execute();
+    $this->posts = Doctrine_Core::getTable('Post');
   }
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->post = Doctrine_Core::getTable('Post')->find(array($request->getParameter('id')));
-    $this->forward404Unless($this->post);
+    $this->post = $this->getRoute()->getObject();
   }
 
   public function executeNew(sfWebRequest $request)

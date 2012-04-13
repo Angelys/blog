@@ -8,13 +8,13 @@
         <?php include_javascripts() ?> 
         <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
-        <title><?php include_slot('title','Angelys Blog')?></title>
+        <title><?php include_slot('title','Blog')?></title>
     </head>
 <body>
     <div class="outer-container">
         <div class="inner-container">
             <div class="header">
-                <div class="title"> <span class="sitename"> <a href="<?php echo url_for('/')?>">Angely's Blog</a></span>
+                <div class="title"> <span class="sitename"> <a href="<?php echo url_for('/')?>">Blog</a></span>
                     <div class="slogan">some slogan</div>
                 </div>
             </div>
