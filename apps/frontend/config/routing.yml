@@ -8,7 +8,9 @@ post:
 
 homepage:
   url:   /
-  param: { module: post, action: index }  
+  class: sfDoctrineRoute
+  param: { module: post, action: index }
+  options: {model: Post, type: object}
   
 show_post:
   url: /post/:id/:title_slug

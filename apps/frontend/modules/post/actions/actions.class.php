@@ -12,9 +12,12 @@ class postActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->posts = Doctrine_Core::getTable('Post');
+    $this->pager = new sfDoctrinePager('Post',  sfConfig::get('app_max_posts_on_page'));
+    $this->pager->setQuery(Doctrine::getTable('Post')->createQuery('a'));
+    $this->pager->setPage($request->getParameter('page',1));
+    $this->pager->init();
   }
-
+  
   public function executeShow(sfWebRequest $request)
   {
     $this->post = $this->getRoute()->getObject();

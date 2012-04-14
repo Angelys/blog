@@ -3,4 +3,4 @@
 
 # default values
 all:
-  max_posts_on_page: 15
+  max_posts_on_page: 5

@@ -26,4 +26,19 @@ class PostTable extends Doctrine_Table
         return $q->execute();
     }
     
+    public function addActiveJobsQuery(Doctrine_Query $q = null)
+    {
+        if (is_null($q))
+        {
+        $q = Doctrine_Query::create()
+            ->from('Post p');
+        }
+
+        $alias = $q->getRootAlias();
+
+        $q->addOrderBy($alias . '.created_at DESC');
+
+        return $q;
+    }
+    
 }
