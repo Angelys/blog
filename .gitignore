@@ -4,3 +4,5 @@ config/databases.yml
 lib/vendor/
 /nbproject/private/cache/
 /nbproject/private/
+/plugins/.channels/
+/plugins/.registry/

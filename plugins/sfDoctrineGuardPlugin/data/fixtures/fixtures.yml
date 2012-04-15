@@ -1,0 +1,57 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Vlad
+    last_name:      Angelys
+    email_address:  admin@gmail.com
+    username:       admin
+    password:       admin
+    is_super_admin: true
+    Groups:         [Group_admin]
+    
+  User_moderator:
+    first_name:     Vlad
+    last_name:      Angelys
+    email_address:  moderator@gmail.com
+    username:       moderator
+    password:       moderator
+    is_super_admin: false
+    Groups:         [Group_moderator]
+
+  User_user:
+    first_name:     Vlad
+    last_name:      Angelys
+    email_address:  user@gmail.com
+    username:       user
+    password:       user
+    is_super_admin: false
+    Groups:         [Group_user]    
+
+sfGuardGroup:
+  Group_admin:
+    name:           admin
+    description:    Administrator group
+    Permissions:    [Permission_admin]
+  
+  Group_moderator:
+    name:           moderator
+    description:    Moderator group
+    Permissions:    [Permission_moderator,Permission_user]
+    
+  Group_user:
+    name:           user
+    description:     User group
+    Permissions:    [Permission_user]
+
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin
+    description:    Administrator permission
+  
+  Permission_moderator:
+    name:           moderator
+    description:     Moderator permission
+
+  Permission_user:
+    name:           user
+    description:     User permission

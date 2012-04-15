@@ -107,7 +107,21 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 	color: #FFE;
 	text-decoration: underline;
 }
+/* menu */
+#menu
+{
+  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #aaa;
+  background-color: #fff;
+}
 
+#menu li
+{
+  margin-right: 15px;
+  display: inline;
+}
 /* main */
 .main {
 	background: url(img/main.gif) repeat-y;

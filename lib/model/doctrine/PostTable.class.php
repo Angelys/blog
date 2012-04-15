@@ -16,17 +16,8 @@ class PostTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Post');
     }
-    
-    public function getActivePosts($max)
-    {
-        $q=Doctrine_Query::create()
-          ->from('Post p')
-          ->limit($max);      
-                  
-        return $q->execute();
-    }
-    
-    public function addActiveJobsQuery(Doctrine_Query $q = null)
+        
+    public function addActivePostsQuery(Doctrine_Query $q = null)
     {
         if (is_null($q))
         {

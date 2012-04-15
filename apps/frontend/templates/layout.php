@@ -18,6 +18,9 @@
                     <div class="slogan">some slogan</div>
                 </div>
             </div>
+            <div class="user_login">
+                <?php if($sf_user->isAuthenticated())link_to('login',sf_guard_signin)?>
+            </div>
             <div class="main">
                 <?php echo $sf_content ; ?>
                 <div class="footer"> 
