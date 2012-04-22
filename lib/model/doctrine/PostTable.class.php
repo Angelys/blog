@@ -17,17 +17,12 @@ class PostTable extends Doctrine_Table
         return Doctrine_Core::getTable('Post');
     }
         
-    public function addActivePostsQuery(Doctrine_Query $q = null)
+    public function addActivePostsQuery()
     {
-        if (is_null($q))
-        {
+
         $q = Doctrine_Query::create()
-            ->from('Post p');
-        }
-
-        $alias = $q->getRootAlias();
-
-        $q->addOrderBy($alias . '.created_at DESC');
+            ->from('Post p')
+            ->addOrderBy('p.created_at DESC');
 
         return $q;
     }

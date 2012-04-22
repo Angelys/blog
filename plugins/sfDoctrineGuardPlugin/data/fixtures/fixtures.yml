@@ -24,7 +24,7 @@ sfGuardUser:
     username:       user
     password:       user
     is_super_admin: false
-    Groups:         [Group_user]    
+    Groups:         []    
 
 sfGuardGroup:
   Group_admin:
@@ -35,13 +35,7 @@ sfGuardGroup:
   Group_moderator:
     name:           moderator
     description:    Moderator group
-    Permissions:    [Permission_moderator,Permission_user]
-    
-  Group_user:
-    name:           user
-    description:     User group
-    Permissions:    [Permission_user]
-
+    Permissions:    [Permission_moderator]
 
 sfGuardPermission:
   Permission_admin:
@@ -51,7 +45,3 @@ sfGuardPermission:
   Permission_moderator:
     name:           moderator
     description:     Moderator permission
-
-  Permission_user:
-    name:           user
-    description:     User permission

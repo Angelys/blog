@@ -38,6 +38,10 @@ abstract class BasePost extends sfDoctrineRecord
     {
         parent::setUp();
         $timestampable0 = new Doctrine_Template_Timestampable();
+        $taggable0 = new Taggable();
+        $commentable0 = new Doctrine_Template_Commentable();
         $this->actAs($timestampable0);
+        $this->actAs($taggable0);
+        $this->actAs($commentable0);
     }
 }

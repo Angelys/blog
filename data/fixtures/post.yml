@@ -3,4 +3,9 @@ Post:
   post_<?php echo $i ;?>:  
     title: post <?php echo $i; ?>-title
     post:  This is some <?php echo $i ; ?> post.
+    tags: tag1,tag2,tag3,tag4
 <?php endfor; ?>
+
+  Long_post:
+    title: long post
+    post: long post.

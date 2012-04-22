@@ -2,7 +2,18 @@
     <?php foreach($pager->getResults() as $post):?>
         <h1><a href="<?php echo url_for('show_post',$post)?>"><?php echo $post->getTitle() ?></a></h1>
         <div class="descr"><?php echo $post->getCreatedAt() ?></div>
-        <p><?php echo $post->getPost() ?></p>
+        <div class="tag">
+            <?php $tags = $post->getTags()?>
+            <?php foreach ($tags as $tag) {
+                echo $tag.' ';
+                }?>
+        </div>
+        <p>
+            <?php echo Blog::cutPost($post->getPost()) ?>
+            <?php if(Blog::hasToBeCut($post->getPost())): ?>
+                <a href="<?php echo url_for('show_post',$post)?>">...</a>
+            <?php endif?>
+        </p>
     <?php endforeach;?>
     
     <div>

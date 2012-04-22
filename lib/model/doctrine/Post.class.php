@@ -16,4 +16,5 @@ class Post extends BasePost
     {
         return Blog::slugify($this->getTitle());
     }
+            
 }

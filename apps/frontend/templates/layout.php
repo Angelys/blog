@@ -19,10 +19,16 @@
                 </div>
             </div>
             <div class="user_login">
-                <?php if($sf_user->isAuthenticated())link_to('login',sf_guard_signin)?>
+                <?php if (!$sf_user->isAuthenticated()):?>
+                <?php echo link_to('signin','sf_guard_signin')?>
+                <?php echo link_to('register','sf_guard_register')?>
+                <?php echo link_to('forget password','sf_guard_forgot_password')?>
+                <?php else: ?>
+                <?php echo link_to('signout','sf_guard_signout')?>
+                <?php endif ?>
             </div>
             <div class="main">
-                <?php echo $sf_content ; ?>
+                <?php echo $sf_content ?>
                 <div class="footer"> 
                     <div class="clearer"></div>
                 </div>
