@@ -9,7 +9,9 @@
         } ?>
     </div>
     <p><?php echo $post->getPost() ?></p>
-    <a href="<?php echo url_for('post_edit',$post)?>">Edit</a>
+    <?php if($sf_user->isAuthenticated() && ($sf_user->hasCredential('moderator') || $sf_user->hasCredential('admin'))):?>
+        <a href="<?php echo url_for('post_edit',$post)?>">Edit</a>
+    <?php endif;?>    
     <a href="<?php echo url_for('post') ?>">List</a>
 <?php include_component('comment', 'formComment', array('object' => $post)) ?>
 <?php include_component('comment', 'list', array('object' => $post, 'i' => 0)) ?>

@@ -80,7 +80,7 @@ class postActions extends sfActions
   public function executeTag(sfWebRequest $request)
   {
     $this->pager = new sfDoctrinePager('Post',  sfConfig::get('app_max_posts_on_page'));
-    $this->pager->getQuery();
+    $this->pager->setQuery(PluginTagTable::getObjectTaggedWithQuery('Post', array($request->getParameter('tag'))));    
     $this->pager->setPage($request->getParameter('page',1));
     $this->pager->init();
   }

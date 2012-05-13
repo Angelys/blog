@@ -24,6 +24,7 @@
                 <?php echo link_to('register','sf_guard_register')?>
                 <?php echo link_to('forget password','sf_guard_forgot_password')?>
                 <?php else: ?>
+                <?php echo "Hello,".$sf_user->getName()?>
                 <?php echo link_to('signout','sf_guard_signout')?>
                 <?php endif ?>
             </div>

@@ -1,10 +1,10 @@
-#
-#
-index :
-  is_secure: false
-
-show :
-  is_secure: false
-
 all:
+  is_secure: false
+
+edit:
   is_secure: true
+  credentials: [[admin, moderator]]
+  
+new:
+  is_secure: true
+  credentials: [[admin, moderator]]  
