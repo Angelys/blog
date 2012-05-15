@@ -4,7 +4,7 @@
 # default values
 all:
   max_posts_on_page: 5
-  length_of_post_on_main_page: 150
+  length_of_post_on_main_page: 25
   
   vjCommentPlugin:
     pagination_active: false

@@ -24,7 +24,7 @@ test:
 
 all:
   .settings:
-    enabled_modules: [default, sfGuardAuth, sfGuardRegister, sfGuardForgotPassword, comment]
+    enabled_modules: [default, sfGuardAuth, sfGuardRegister, sfGuardForgotPassword, comment, commentAdmin]
     # Form security secret (CSRF protection)
     csrf_secret:            89234280d7441a7348bdc124b067bde76c36231d
 

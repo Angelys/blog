@@ -9,7 +9,6 @@
     <?php include_javascripts() ?>
   </head>
   <body>
-    <?php if (($sf_user->isAuthenticated()) && ($sf_user->hasCredential('moderator'))): ?>
     <div id="menu" style="display: inline">
         <ul>
             <li><?php echo link_to('Posts', 'post') ?></li>
@@ -23,7 +22,6 @@
             <li><?php echo link_to('Logout', 'sf_guard_signout') ?></li>
         </ul>
     </div>
-    <?php endif ?>
     <?php echo $sf_content ?>
   </body>
 </html>
