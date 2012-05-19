@@ -1,0 +1,6 @@
+all:
+  is_secure: false
+
+delete:
+  is_secure: true
+  credentials: [[admin, moderator]]

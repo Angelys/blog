@@ -16,6 +16,10 @@ class CommentForm extends BaseCommentForm
       $this->widgetSchema['post_id'] = new sfWidgetFormInputHidden();
       $this->widgetSchema['user_id'] = new sfWidgetFormInputHidden();
       $this->widgetSchema['user_name'] = new sfWidgetFormInputHidden();
+      $this->widgetSchema['comment_body'] = new sfWidgetFormTextareaTinyMCE(array(
+                                            'width'  => 550,
+                                            'height' => 350
+                                            ));
   }
   
   

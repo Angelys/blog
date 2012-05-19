@@ -25,6 +25,13 @@ show_post:
   requirements:
     id: \d+
     sf_method: [get,post]
+    
+comment_delete:
+  url:     /comment/:post_id/:comment_id.:sf_format
+  class:   sfDoctrineRoute
+  options: { model: Comment, type: object }
+  param:   { module: comment, action: delete, sf_format: html }
+  requirements: { sf_method: delete }    
  
 sf_guard_signin:
   url:   /login
