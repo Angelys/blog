@@ -4,7 +4,7 @@
     <div class="descr" ><?php echo $post->getCreatedAt() ?></div>
     <div class="tag">
         <?php foreach ($post->getTags() as $tag) {
-            echo $tag;
+            echo link_to($tag,'@tag?tag='.$tag);
             echo ' ';
         } ?>
     </div>
