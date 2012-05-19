@@ -27,4 +27,5 @@ class PostTable extends Doctrine_Table
         return $q;
     }
     
+    
 }

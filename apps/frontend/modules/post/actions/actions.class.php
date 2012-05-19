@@ -21,6 +21,7 @@ class postActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->post = $this->getRoute()->getObject();
+    $this->comments = CommentTable::getCommentsByPostId($request->getParameter('id'));
   }
 
   public function executeNew(sfWebRequest $request)

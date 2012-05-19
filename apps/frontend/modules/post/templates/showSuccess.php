@@ -14,6 +14,6 @@
     <?php endif;?>    
     <a href="<?php echo url_for('post') ?>">List</a>
 <?php include_component('comment', 'formComment', array('object' => $post)) ?>
-<?php include_component('comment', 'list', array('object' => $post, 'i' => 0)) ?>
+<?php include_component('comment', 'list', array('object' => $comments)) ?>
 </div>
 

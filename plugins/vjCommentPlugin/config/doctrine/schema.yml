@@ -31,7 +31,7 @@ Comment:
       type: integer
 <?php if(vjComment::isGuardBindEnabled()):  ?>
     user_id:
-      type: integer(8)
+      type: integer(4)
       notnull: false
 <?php endif; ?>
   indexes:

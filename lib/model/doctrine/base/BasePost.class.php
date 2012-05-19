@@ -7,11 +7,14 @@
  * 
  * @property string $title
  * @property string $post
+ * @property Doctrine_Collection $Comments
  * 
- * @method string getTitle() Returns the current record's "title" value
- * @method string getPost()  Returns the current record's "post" value
- * @method Post   setTitle() Sets the current record's "title" value
- * @method Post   setPost()  Sets the current record's "post" value
+ * @method string              getTitle()    Returns the current record's "title" value
+ * @method string              getPost()     Returns the current record's "post" value
+ * @method Doctrine_Collection getComments() Returns the current record's "Comments" collection
+ * @method Post                setTitle()    Sets the current record's "title" value
+ * @method Post                setPost()     Sets the current record's "post" value
+ * @method Post                setComments() Sets the current record's "Comments" collection
  * 
  * @package    blog
  * @subpackage model
@@ -37,11 +40,13 @@ abstract class BasePost extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Comment as Comments', array(
+             'local' => 'id',
+             'foreign' => 'post_id'));
+
         $timestampable0 = new Doctrine_Template_Timestampable();
         $taggable0 = new Taggable();
-        $commentable0 = new Doctrine_Template_Commentable();
         $this->actAs($timestampable0);
         $this->actAs($taggable0);
-        $this->actAs($commentable0);
     }
 }

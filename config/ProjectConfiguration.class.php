@@ -13,6 +13,5 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfDoctrineGuardPlugin');
     $this->enablePlugins('mpRealityAdminPlugin');
     $this->enablePlugins('sfDoctrineActAsTaggablePlugin');
-    $this->enablePlugins('vjCommentPlugin');
   }
 }

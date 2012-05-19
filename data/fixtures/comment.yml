@@ -1,0 +1,6 @@
+Comment:
+  Comment_1:
+    post_id: 1
+    user_id: 1
+    user_name: User
+    comment_body: This is some comment for 1st post.

@@ -1,0 +1,12 @@
+Comment:
+  actAs: {Timestampable: ~}
+  columns:
+    post_id: {type: integer}
+    user_id: {type: integer,notnull: true}
+    user_name: {type: string(25)}
+    comment_body: {type: string(500),notnull: true}
+  relations:
+    Post: {onDelete: CASCADE, local: post_id, foreign: id, foreignAlias: Comments}
+    sf_Guard_User: {onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: User}
+      
+    
