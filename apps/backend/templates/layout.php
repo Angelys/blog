@@ -11,7 +11,7 @@
   <body>
     <div id="menu" style="display: inline">
         <ul>
-            <?php if($sf_user->hasCredential('Moderator')):?>
+            <?php if($sf_user->hasCredential('moderator')):?>
             <li><?php echo link_to('Posts', 'post') ?></li>
             <li><?php echo link_to('Comments', 'comment') ?></li>
             <?php if($sf_user->hasCredential('admin')): ?>
