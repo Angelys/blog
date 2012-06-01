@@ -19,9 +19,7 @@ class PostTable extends Doctrine_Table
         
     public function addActivePostsQuery()
     {
-
-        $q = Doctrine_Query::create()
-            ->from('Post p')
+        $q = $this->createQuery('p')
             ->addOrderBy('p.created_at DESC');
 
         return $q;

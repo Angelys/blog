@@ -12,14 +12,14 @@
     <div id="menu" style="display: inline">
         <ul>
             <?php if($sf_user->hasCredential('moderator')):?>
-            <li><?php echo link_to('Posts', 'post') ?></li>
-            <li><?php echo link_to('Comments', 'comment') ?></li>
-            <?php if($sf_user->hasCredential('admin')): ?>
-            <li><?php echo link_to('Users', 'sf_guard_user') ?></li>
-            <li><?php echo link_to('Group', 'sf_guard_group') ?></li>
-            <li><?php echo link_to('Permissions', 'sf_guard_permission') ?></li>
-            <?php endif ?>
-            <li><?php echo link_to('Logout', 'sf_guard_signout') ?></li>
+                <li><?php echo link_to('Posts', 'post') ?></li>
+                <li><?php echo link_to('Comments', 'comment') ?></li>
+                <?php if($sf_user->hasCredential('admin')): ?>
+                    <li><?php echo link_to('Users', 'sf_guard_user') ?></li>
+                    <li><?php echo link_to('Group', 'sf_guard_group') ?></li>
+                    <li><?php echo link_to('Permissions', 'sf_guard_permission') ?></li>
+                <?php endif ?>
+                <li><?php echo link_to('Logout', 'sf_guard_signout') ?></li>
             <?php endif;?>
         </ul>
     </div>

@@ -4,6 +4,8 @@
 
 <p><?php echo sfContext::getInstance()->getRequest()->getUri() ?></p>
 
-<h3><?php echo __('Login below to gain access', null, 'sf_guard') ?></h3>
+<h3><?php echo link_to('Logout', 'sf_guard_signout') ?></h3>
 
-<?php echo get_component('sfGuardAuth', 'signin_form') ?>
+<h3><?php //echo __('Login below to gain access', null, 'sf_guard') ?></h3>
+
+<?php //echo get_component('sfGuardAuth', 'signin_form') ?>

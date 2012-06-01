@@ -1,3 +1,5 @@
+<?php use_helper('Text') ?>
+
 <div class="content">
     <?php foreach($pager->getResults() as $post):?>
         <h1><a href="<?php echo url_for('show_post',$post)?>"><?php echo $post->getTitle() ?></a></h1>
@@ -9,10 +11,7 @@
                 }?>
         </div>
         <p>
-            <?php echo Blog::cutPost($post->getPost()) ?>
-            <?php if(Blog::hasToBeCut($post->getPost())): ?>
-                <a href="<?php echo url_for('show_post',$post)?>">...</a>
-            <?php endif?>
+            <?php echo truncate_text($post->getPost(), sfConfig::get('app_length_of_post_on_main_page'), link_to('...', 'show_post', $post), true) ?>
         </p>
     <?php endforeach;?>
     

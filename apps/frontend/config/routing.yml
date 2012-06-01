@@ -12,7 +12,7 @@ homepage:
   options: {model: Post, type: object}
 
 tag:
-  url: /:tag
+  url: /post/tag/:tag
   class: sfDoctrineRoute
   param: {module: post, action: tag }
   options: {model: Post, type: object}
@@ -26,24 +26,18 @@ show_post:
     id: \d+
     sf_method: [get,post]
     
+profile:
+  url: /profile/:id
+  class: sfDoctrineRoute
+  param: {module: userRoom, action: index }
+  options: {model: sfGuardUser, type: object}
+    
 comment_delete:
   url:     /comment/:post_id/:comment_id.:sf_format
   class:   sfDoctrineRoute
   options: { model: Comment, type: object }
   param:   { module: comment, action: delete, sf_format: html }
-  requirements: { sf_method: delete }    
- 
-sf_guard_signin:
-  url:   /login
-  param: { module: sfGuardAuth, action: signin }
- 
-sf_guard_signout:
-  url:   /logout
-  param: { module: sfGuardAuth, action: signout }
- 
-sf_guard_password:
-  url:   /request_password
-  param: { module: sfGuardAuth, action: password }   
+  requirements: { sf_method: delete }
     
   
 # generic rules
