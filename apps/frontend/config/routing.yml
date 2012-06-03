@@ -26,11 +26,20 @@ show_post:
     id: \d+
     sf_method: [get,post]
     
-profile:
-  url: /profile/:id
+profile_show:
+  url: /profile/show/:id
   class: sfDoctrineRoute
   param: {module: userRoom, action: index }
   options: {model: sfGuardUser, type: object}
+
+profile_edit:
+  url: /profile/edit/:id
+  class: sfDoctrineRoute
+  param: {module: userRoom, action: edit}
+  options: {model: sfGuardUser, type: object}
+  requirements:
+    id: \d+
+    sf_method: [get,post]
     
 comment_delete:
   url:     /comment/:post_id/:comment_id.:sf_format

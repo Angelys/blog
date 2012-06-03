@@ -25,7 +25,7 @@
                 <?php echo link_to('forget password','sf_guard_forgot_password')?>
                 <?php else: ?>
                 <?php echo "Hello,".$sf_user->getName()?>
-                <?php echo link_to('my profile','@profile?id='.$sf_user->getGuardUser()->getId())?>
+                <?php echo link_to('my profile','@profile_show?id='.$sf_user->getGuardUser()->getId())?>
                 <?php echo link_to('signout','sf_guard_signout')?>
                 <?php endif ?>
             </div>

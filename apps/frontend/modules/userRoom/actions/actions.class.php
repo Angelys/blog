@@ -17,9 +17,27 @@ class userRoomActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->forwardIf(!$this->getUser()->isAuthenticated(),'sfGuardAuth','signin');
     $this->user =  $this->getUser()->getGuardUser();
-    $this->forward404Unless($this->user->getId() == $request->getParameter('id'));
+    $this->edit = $this->user->getId() == $request->getParameter('id');
             
   }
+  
+  public function executeEdit(sfWebRequest $request)
+  {
+    $this->user = $this->getUser()->getGuardUser();
+    if ($request ->isMethod(sfRequest::POST))
+    {
+        $form = new sfGuardUserForm($this->user);
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+        if ($form->isValid())
+        {
+            $user = $form->save();
+
+            $this->redirect('@profile_edit?id='.$user->getId());
+        }
+    }
+    $this->forward404Unless($this->user->getId() == $request->getParameter('id'));
+    $this->form = new sfGuardUserForm($this->user);
+  }
+  
 }    
