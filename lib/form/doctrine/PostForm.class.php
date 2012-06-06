@@ -13,5 +13,7 @@ class PostForm extends BasePostForm
   public function configure()
   {
       unset($this['created_at'],$this['updated_at']);
+      $this -> setWidget('Tags', new sfWidgetFormInputText());
+      $this -> setValidator('Tags', new sfValidatorString());
   }
 }

@@ -44,6 +44,7 @@ class postActions extends sfActions
   {
     $this->forward404Unless($post = Doctrine_Core::getTable('Post')->find(array($request->getParameter('id'))), sprintf('Object post does not exist (%s).', $request->getParameter('id')));
     $this->form = new PostForm($post);
+    $this->form->setDefault('Tags', implode(',',$post->getTags()));
   }
 
   public function executeUpdate(sfWebRequest $request)
@@ -78,7 +79,7 @@ class postActions extends sfActions
     }
   }
   
-  public function executeTag(sfWebRequest $request)
+  public  function executeTag(sfWebRequest $request)
   {
     $this->pager = new sfDoctrinePager('Post',  sfConfig::get('app_max_posts_on_page'));
     $this->pager->setQuery(PluginTagTable::getObjectTaggedWithQuery('Post', array($request->getParameter('tag'))));    

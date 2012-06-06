@@ -3,7 +3,7 @@ Post:
   post_<?php echo $i ;?>:  
     title: post <?php echo $i; ?>-title
     post:  This is some <?php echo $i ; ?> post.
-    tags: tag1,tag2,tag3,tag4
+    tags: tag<?php echo rand(1,10)?>,tag<?php echo rand(1,10)?>,tag<?php echo rand(1,10)?>,tag0
 <?php endfor; ?>
 
   Long_post:

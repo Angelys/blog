@@ -25,6 +25,7 @@ class userRoomActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
     $this->user = $this->getUser()->getGuardUser();
+    $this->forward404Unless($this->user->getId() == $request->getParameter('id'));
     if ($request ->isMethod(sfRequest::POST))
     {
         $form = new sfGuardUserForm($this->user);
@@ -36,8 +37,25 @@ class userRoomActions extends sfActions
             $this->redirect('@profile_edit?id='.$user->getId());
         }
     }
-    $this->forward404Unless($this->user->getId() == $request->getParameter('id'));
     $this->form = new sfGuardUserForm($this->user);
+  }
+  
+  public function executeChangePassword(sfWebRequest $request)
+  {
+    $this->user = $this->getUser()->getGuardUser();
+    $this->forward404Unless($this->user->getId() == $request->getParameter('id'));
+    if ($request ->isMethod(sfRequest::POST))
+    {
+        $form = new sfGuardUserForm($this->user);
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+        if ($form->isValid())
+        {
+            $user = $form->save();
+
+            $this->redirect('@profile_edit?id='.$user->getId());
+        }
+    }
+    $this->form = new sfUserPasswordForm($this->user);
   }
   
 }    

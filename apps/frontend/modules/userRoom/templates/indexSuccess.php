@@ -22,11 +22,16 @@
             <td><?php echo $user->getCreatedAt()?></td>
         </tr>
     </tbody>
+    <?php if($edit):?>
     <tfoot>
         <tr>
             <td>
-        <?php if($edit) echo link_to('edit profile','@profile_edit?id='.$user->getId())?>
+                 <?php echo link_to('edit profile','@profile_edit?id='.$user->getId())?>
+            </td>
+            <td>
+                <?php echo link_to('change password','@profile_change_password?id='.$user->getId())?>
             </td>
         </tr>
     </tfoot>
+    <?php endIf;?>
 </table>    

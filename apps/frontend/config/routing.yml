@@ -41,6 +41,12 @@ profile_edit:
     id: \d+
     sf_method: [get,post]
     
+profile_change_password:
+  url: /profile/edit/:id/change_password/
+  class: sfDoctrineRoute
+  param: {module: userRoom, action: changePassword}
+  options: {model: sfGuardUser, type: object}
+    
 comment_delete:
   url:     /comment/:post_id/:comment_id.:sf_format
   class:   sfDoctrineRoute
